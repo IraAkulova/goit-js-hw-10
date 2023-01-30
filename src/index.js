@@ -18,6 +18,9 @@ function onInputChange(e) {
     e.preventDefault();
     const countryInp = e.target.value;
     const countryToFind = countryInp.trim()
+    if (countryToFind === '') {
+        return;
+    }
     deleteMurkup(countryToFind);
     fetchCountries(countryToFind)
         .then(renderMarkup)
@@ -27,13 +30,13 @@ function onInputChange(e) {
 function createUlMarkup(countries) {
     refs.countryInfo.innerHTML = '';
     return countries.map(({ name, flags }) => {
-        return `<div class="flag-name-ul">
+        return `<li class="flag-name-li">
         <img
         class="country-flag"
         src="${flags.svg}"
         alt="Flag of ${name.official}"
         />
-        <h1 class="country-name">${name.official}</h1></div>`;
+        <h1 class="country-name">${name.official}</h1></li>`;
     }
     ).join('');
 };
@@ -59,7 +62,6 @@ function createDivMarkup(countries) {
 };
 
 function renderMarkup(country) {
-console.log(country.length);
     if (country.length >= 10) {
         Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
     } else
