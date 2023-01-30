@@ -53,9 +53,9 @@ function createDivMarkup(countries) {
         />
         <h1 class="country-name">${name.official}</h1></div>
         <ul class="country-info">
-        <li class="country-capital">${capital}</li>
-        <li class="country-population">${population}</li>
-        <li class="country-language">${allLanguage}</li>
+        <li><span class="span">Capital:  </span>${capital}</li>
+        <li><span class="span">Population:  </span>${population}</li>
+        <li><span class="span">Languages:  </span>${allLanguage}</li>
         </ul>`;
     }
     ).join('');
@@ -73,7 +73,7 @@ function renderMarkup(country) {
 };
 
 function onError(error) {
-    Notiflix.Notify.failure(`ops, there is no country with that name`)
+    Notiflix.Notify.failure(`Oops, there is no country with that name`)
 };
 
 function deleteMurkup(countryToFind) {

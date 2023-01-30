@@ -8,6 +8,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fafafa;
+  background-image: url(/src/images/dot-grid.jpg);
+  background-repeat: repeat;
   color: #212121;
   line-height: 1.5;
 }
@@ -44,4 +46,17 @@ body {
 .country-name{
   margin-top: 2px;
   margin-bottom: 2px;
+}
+
+.country-info{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding-left: 0px;
+  list-style: none;
+}
+
+.span{
+  font-weight:700
 }
