@@ -18,10 +18,10 @@ function onInputChange(e) {
     e.preventDefault();
     const countryInp = e.target.value;
     const countryToFind = countryInp.trim()
+    deleteMurkup(countryToFind);
     if (countryToFind === '') {
         return;
     }
-    deleteMurkup(countryToFind);
     fetchCountries(countryToFind)
         .then(renderMarkup)
         .catch(onError);
