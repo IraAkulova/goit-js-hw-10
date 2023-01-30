@@ -63,11 +63,10 @@ console.log(country.length);
     if (country.length >= 10) {
         Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
     } else
-    if (country.length !== 1 || country.length <= 10) {
-        refs.countryListEl.insertAdjacentHTML('beforeend', createUlMarkup(country));
-    } else
-    if (country.length === 1) {
-        refs.countryInfo.insertAdjacentHTML('beforeend', createDivMarkup(country));
+    if (country.length >= 2 && country.length <= 10) {
+        refs.countryListEl.innerHTML = createUlMarkup(country);
+    } else {
+        refs.countryInfo.innerHTML = createDivMarkup(country);
     }
 };
 
