@@ -18,3 +18,19 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+.flag-name-div{
+  display: flex;
+  align-items: center;
+}
+
+.flag-name-ul {
+  display: flex;
+  align-items: center;
+}
+
+.country-flag {
+  width: auto;
+  height: 20px;
+  margin-right: 10px;
+}
